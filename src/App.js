@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Alpha from './components/Alpha'
+import Bravo from './components/Bravo';
 
 function App() {
+  const [productName, setProductName] = useState("Cup & String")
+  // let productName = "Cup & String"
+  // const handleChange = (event) => {
+    // setProductName(event.target.value)
+    // productName = event.target.value
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <h1>Hello World</h1>
+      <Alpha setProductName={setProductName} />
+      <Bravo name={productName}/>
     </div>
   );
-}
+  }
 
 export default App;
